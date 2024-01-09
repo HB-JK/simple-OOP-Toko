@@ -77,7 +77,15 @@ public class Penjualan {
     }
     
     public void tambahProdukJual(DetailPenjualan detail){
-        this.list_produk[list_produk.length] = detail;
+        this.list_produk[list_produk.length] = detail;//new DetailPenjualan();
+        
+        /***
+         * list_produk[] = {
+         *  new DetailPenjualan(),
+         *  new DetailPenjualan(),
+         *  new DetailPenjualan(),
+         * }
+         */
     }
     
     public void tampilkanListProdukJual(){

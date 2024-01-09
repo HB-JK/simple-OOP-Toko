@@ -92,7 +92,7 @@ public class TokoBangunan {
             
             switch(feature_choice){
                 case 1: // case 1 untuk menampilkan semua produk yang sudah ditambahkan.
-                    admin.tampilkanSemuaProduk();
+                    admin.tampilkanSemuaProduk(); // new Admin().tampilkanSemuaProduk();
                     break;
                 case 2: // case 2 untuk menambahkan produk
                     admin.tambahProduk(this.defineProduk());

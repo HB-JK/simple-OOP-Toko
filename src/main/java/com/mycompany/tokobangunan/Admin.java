@@ -76,6 +76,17 @@ public class Admin {
         return list_produk.get(key - 1);
     }
     
+    public void updateStokProduk(int itemIndex, double jumlahBarang, String tipeStok){
+        Produk produk = this.getProduk(itemIndex);
+        if(tipeStok == "keluar"){
+            produk.setStokProduk(produk.getStokProduk() - jumlahBarang);
+        }else{
+            produk.setStokProduk(produk.getStokProduk() + jumlahBarang);
+        }
+        
+        this.list_produk.replace(itemIndex, produk);
+    }
+    
     public void tampilkanSemuaProduk(){
         System.out.println("========== List Produk ============");
         for(Map.Entry<Integer, Produk> entry: list_produk.entrySet()){

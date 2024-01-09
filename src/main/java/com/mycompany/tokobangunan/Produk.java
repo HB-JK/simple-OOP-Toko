@@ -61,10 +61,6 @@ public class Produk {
         this.harga_jual = harga_jual;
     }
     
-    public double tambahStok(double stok_tambah){
-        return this.stok_produk + stok_tambah;
-    }
-    
     public String tampilkanDetail(){
         return this.nama_produk +
                 ", dengan harga " +
