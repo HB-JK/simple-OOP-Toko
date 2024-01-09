@@ -14,8 +14,8 @@ import java.util.UUID;
  * @author User
  */
 public class Admin {
-    public int id_admin;
-    public String username;
+    private String id_admin;
+    private String username;
     private HashMap<String,String> user = new HashMap<String, String>();
     private List<Map<String , String>> list_user = new ArrayList<Map<String,String>>();
     private HashMap<Integer, Produk> list_produk = new HashMap<Integer, Produk>();
@@ -28,7 +28,7 @@ public class Admin {
         this.list_user.add(this.list_user.size(), this.user);
     }
     
-    public int getIdAdmin(){
+    public String getIdAdmin(){
         return this.id_admin;
     }
     
@@ -36,7 +36,7 @@ public class Admin {
         try{
             for(Map<String, String> map: list_user){
                 if(map.get("username").equals(username) && map.get("password").equals(password)){
-                    this.id_admin = Integer.valueOf(map.get("id_admin"));
+                    this.id_admin = map.get("id_admin");
                     this.username = username;
                     return true;
                 }

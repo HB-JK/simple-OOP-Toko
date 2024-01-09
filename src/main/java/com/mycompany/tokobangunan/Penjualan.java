@@ -17,17 +17,14 @@ public class Penjualan {
     private int id_penjualan;
     private String no_penjualan;
     private String nama_customer;
-    private Double jumlah_barang;
-    private Double harga_jual;
     private String alamat_customer;
+    private String metode_pembayaran;
     private DetailPenjualan[] list_produk = new DetailPenjualan[]{};
     
-    public Penjualan(String nama_customer, Double jumlah_barang, Double harga_jual, String alamat_customer){
+    public Penjualan(String nama_customer, String alamat_customer){
         this.id_penjualan = new Random().nextInt();
         this.no_penjualan = this.generateNoPenjualan();
         this.nama_customer = nama_customer;
-        this.jumlah_barang = jumlah_barang;
-        this.harga_jual = harga_jual;
         this.alamat_customer = alamat_customer;
     }
     
@@ -48,44 +45,28 @@ public class Penjualan {
         return nama_customer;
     }
     
-    public Double getJumlahBarang(){
-        return jumlah_barang;
-    }
-    
-    public Double getHargaJual(){
-        return harga_jual;
-    }
-    
     public String getAlamatCustomer(){
         return alamat_customer;
+    }
+    
+    public String getMetodePembayaran(){
+        return metode_pembayaran;
     }
     
     public void setNamaCustomer(String nama_customer){
         this.nama_customer = nama_customer;
     }
     
-    public void setJumlahBarang(Double jumlah_barang){
-        this.jumlah_barang = jumlah_barang;
-    }
-    
-    public void setHargaJual(Double harga_jual){
-        this.harga_jual = harga_jual;
-    }
-    
     public void setAlamatCustomer(String alamat_customer){
         this.alamat_customer = alamat_customer;
     }
     
+    public void setMetodePembayaran(String metode_pembayaran){
+        this.metode_pembayaran = metode_pembayaran;
+    }
+    
     public void tambahProdukJual(DetailPenjualan detail){
-        this.list_produk[list_produk.length] = detail;//new DetailPenjualan();
-        
-        /***
-         * list_produk[] = {
-         *  new DetailPenjualan(),
-         *  new DetailPenjualan(),
-         *  new DetailPenjualan(),
-         * }
-         */
+        this.list_produk[list_produk.length] = detail; //new DetailPenjualan();
     }
     
     public void tampilkanListProdukJual(){
